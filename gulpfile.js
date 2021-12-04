@@ -1,6 +1,8 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
+const autoprefixer = require('gulp-autoprefixer');
+const cleanCSS = require('gulp-clean-css');
 
 function style () {
     return gulp.src('./scss/**/*.scss')
@@ -19,5 +21,19 @@ function watch() {
     gulp.watch('./*.html').on('change', browserSync.reload);
 }
 
+function prefix() {
+    return gulp.src('./css/style.css')
+    .pipe(autoprefixer())
+    .pipe(gulp.dest('./'))
+}
+
+function clean() {
+    return gulp.src("./style.css")
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest("./"))
+}
+
+exports.clean = clean;
 exports.style = style;
 exports.watch = watch;
+exports.prefix = prefix;
