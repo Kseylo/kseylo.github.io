@@ -155,6 +155,7 @@ body {
   align-items: center;
   justify-content: center;
   @include respond(tab-land) {
+    background-image: url("../images/hero-image-small.webp");
   }
 
   &__header {
