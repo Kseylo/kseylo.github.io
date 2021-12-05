@@ -112,9 +112,11 @@ body {
   &__logo {
     height: 11rem;
     width: 11rem;
+    margin-left: 3rem; 
     grid-column: 3 / 4;
     @include respond(tab-land) {
       grid-column: 1 / 2;
+      margin-left: 0.5rem;
     }
   }
   &__list {
@@ -126,7 +128,7 @@ body {
     align-items: center;
     @include respond(phone) {
       grid-column: 2 / 10;
-      font-size: 1.8rem;
+      font-size: 1.8  rem;
       padding: 0.5rem;
     }
     &__links:link,
