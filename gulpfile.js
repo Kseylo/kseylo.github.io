@@ -3,23 +3,14 @@ const sass = require("gulp-sass")(require("sass"));
 const browserSync = require("browser-sync").create();
 const autoprefixer = require("gulp-autoprefixer");
 const cleanCSS = require("gulp-clean-css");
+const rename = require("gulp-rename");
 
 function style() {
   return gulp
-    .src("./static/scss/**/*.scss")
+    .src("./static/scss/style.scss")
     .pipe(sass())
+    // .pipe(rename("about.css"))
     .pipe(gulp.dest("./static/css"))
-    .pipe(browserSync.stream());
-}
-
-function watch() {
-  browserSync.init({
-    server: {
-      baseDir: "./",
-    },
-  });
-  gulp.watch("./static/scss/**/*.scss", style);
-  gulp.watch("./templates/*.html").on("change", browserSync.reload);
 }
 
 function prefix() {
@@ -36,7 +27,7 @@ function clean() {
     .pipe(gulp.dest("./static/css/"));
 }
 
+
 exports.clean = clean;
 exports.style = style;
-exports.watch = watch;
 exports.prefix = prefix;

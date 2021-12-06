@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
-    <link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet" />
-    <title>Landing Page</title>
-  </head>
-  <body class="container">
-    <header class="header">
-      <nav class="nav">
-        <img
-        src="./static/images/logo-small.webp"
-        alt="coffee-cherry-logo"
-        class="nav__logo"
-      />
-        <ul class="nav__list">
-          <a href="#" class="nav__list__links">ABOUT US</a>
-          <a href="{{url_for('locations')}}" class="nav__list__links">LOCATIONS</a>
-          <a href="#" class="nav__list__links">MENU</a>
-          <a href="#" class="nav__list__links">CONTACTS</a>
-      </nav>
-    </header>
+{% include 'header.html' %}
     <section class="hero">
       <h1 class="hero__header">
         COFFEE CHERRY
@@ -31,37 +7,37 @@
     <section class="about">
       <div class="about__wrapper">
 
-        <h1 class="about__header">ABOUT US</h1>
-        <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <a href="#" class="about__btn btn">FULL STORY</a>
+        <h1 class="about__header">О НАС</h1>
+        <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#" class="about__btn btn">ПОДРОБНЕЕ</a>
       </div>
       <img src="./static/images/story-img.webp" alt="story image" class="about__img">
     </section>
     <section class="products">
-      <h1 class="products__header">PRODUCTS</h1>
+      <h1 class="products__header">ПРОДУКЦИЯ</h1>
       <div class="products__wrapper">
           <figure class="wrapper__1">
             <img src="./static/images/latte.webp  " alt="Latte" class="products__img">
-            <figcaption class="products__img__text">Latte</figcaption>
+            <figcaption class="products__img__text">Латте</figcaption>
           </figure> 
           <figure class="wrapper__2">
             <img src="./static/images/latte.webp " alt="latte" class="products__img">
-            <figcaption class="products__img__text">latte</figcaption>
+            <figcaption class="products__img__text">Латте</figcaption>
           </figure> 
           <figure class="wrapper__3">
             <img src="./static/images/latte.webp  " alt="latte" class="products__img">
-            <figcaption class="products__img__text">latte</figcaption>
+            <figcaption class="products__img__text">Латте</figcaption>
           </figure> 
-          <a href="#" class="btn products__button">ALL MENU</a>
+          <a href="#" class="btn products__button">МЕНЮ</a>
       </div>
 
     </section>
     <section class="locations">
       <div class="locations__wrapper">
 
-        <h1 class="locations__header">LOCATIONS</h1>
+        <h1 class="locations__header">КОФЕЙНИ</h1>
         <p class="locations__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet</p>
-          <a href="#" class="locations__btn btn">ALL LOCATIONS</a>
+          <a href="#" class="locations__btn btn">ПОДРОБНЕЕ</a>
       </div>
       <img srcset="./static/images/locations-small.webp 300w, ./static/images/locations.webp 1000w"
       sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
@@ -69,28 +45,5 @@
       src="./static/images/locations.webp"
       class="locations__img">
     </section>
-    <footer class="footer">
-      <p>
-        <a href="#" class="footer__link">FINS US ON INSTAGRAM!</a>
-      </p>
-      <div class="footer__wrapper">
-        <nav class="footer__nav">
-          <ul class="footer__list">
-            <a href="#" class="footer__list__link">ABOUT US<a>
-            <a href="#" class="footer__list__link">LOCATIONS</a>
-            <a href="#" class="footer__list__link">MENU</a>
-            <a href="#" class="footer__list__link">CONTACTS</a>
-            <a href="#" class="footer__list__link"><ion-icon src="./static/images/logo-vk.svg"></ion-icon></a>
-            <a href="#" class="footer__list__link"><ion-icon src="./static/images/logo-instagram.svg"></ion-icon></a>
-          </ul>
-        </nav>
-        <p class="copyright">
-          &copy; Copyright 2021 by Aleksey Lozhkin.
-        </p>
-      </div>
-      
-    </footer>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  </body>
-</html>
+
+    {% include 'footer.html' %}
