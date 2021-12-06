@@ -6,9 +6,9 @@ const cleanCSS = require("gulp-clean-css");
 
 function style() {
   return gulp
-    .src("./scss/**/*.scss")
+    .src("./static/scss/**/*.scss")
     .pipe(sass())
-    .pipe(gulp.dest("./css"))
+    .pipe(gulp.dest("./static/css"))
     .pipe(browserSync.stream());
 }
 
@@ -18,22 +18,22 @@ function watch() {
       baseDir: "./",
     },
   });
-  gulp.watch("./scss/**/*.scss", style);
-  gulp.watch("./*.html").on("change", browserSync.reload);
+  gulp.watch("./static/scss/**/*.scss", style);
+  gulp.watch("./templates/*.html").on("change", browserSync.reload);
 }
 
 function prefix() {
   return gulp
-    .src("./css/style.css")
+    .src("./static/css/style.css")
     .pipe(autoprefixer())
-    .pipe(gulp.dest("./css/"));
+    .pipe(gulp.dest("./static/css/"));
 }
 
 function clean() {
   return gulp
-    .src("./css/style.css")
+    .src("./static/css/style.css")
     .pipe(cleanCSS({ compatibility: "ie8" }))
-    .pipe(gulp.dest("./css/"));
+    .pipe(gulp.dest("./static/css/"));
 }
 
 exports.clean = clean;
