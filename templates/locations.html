@@ -1,64 +1,95 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/locations.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" />
-    <title>Landing Page</title>
-  </head>
-  <body class="container">
-    <header class="header">
-      <nav class="nav">
-        <a href="{{url_for('home')}}" class="nav__img-link">
-
-          <img
-          src="./static/images/logo-small.webp"
-          alt="coffee-cherry-logo"
-          class="nav__logo"
-          />
-        </a>
-        <ul class="nav__list">
-          <a href="#" class="nav__list__links">ABOUT US</a>
-          <a href="#" class="nav__list__links">LOCATIONS</a>
-          <a href="#" class="nav__list__links">MENU</a>
-          <a href="#" class="nav__list__links">CONTACTS</a>
-      </nav>
-    </header> -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/locations.css') }}" />
-    {% include "header.html" %}
-    <section class="location-page">
-      <h1 class="location-page__header">LOCATIONS</h1>
-      <div class="location-page__wrapper">
-        <figure class="location-page-cafe">
-            <img width="200" height="200" src="./static/images/locations-small.webp" alt="кофейня тц район" class="location-page-cafe__img">
-          <figcaption class="location-page-cafe__text-block">
-            <div class="location-page-cafe__title">ТЦ Район</div>
-            <div class="location-page-cafe__meta"><ion-icon src="./static/images/location-outline.svg" class="location-page-cafe__icon"></ion-icon>Междуреченск, ул. Интернациональная 14</div>
-            <div class="location-page-cafe__meta"><ion-icon src="./static/images/time-outline.svg" class="location-page-cafe__icon"></ion-icon>Открыты с 9:00 до 21:00</div>
-            <a href="#" class="location-page-cafe__btn btn">НА КАРТУ &rarr;</a>
-          </figcaption>
-        </figure>
-        <figure class="location-page-cafe">
-          <img width="200" height="200" src="./static/images/locations-small.webp" alt="кофейня тц район" class="location-page-cafe__img">
-          <figcaption class="location-page-cafe__text-block">
-            <div class="location-page-cafe__title">ТРК Бель-су</div>
-            <div class="location-page-cafe__meta"><ion-icon src="./static/images/location-outline.svg" class="location-page-cafe__icon"></ion-icon>Междуреченск, Проспект Строителей 31</div>
-            <div class="location-page-cafe__meta"><ion-icon src="./static/images/time-outline.svg" class="location-page-cafe__icon"></ion-icon>Открыты с 9:00 до 21:00</div>
-            <a href="#" class="location-page-cafe__btn btn">НА КАРТУ &rarr;</a>
-          </figcaption>
-        </figure>
-        <figure class="location-page-cafe">
-          <img width="200" height="200" src="./static/images/locations-small.webp" alt="кофейня тц район" class="location-page-cafe__img">
-          <figcaption class="location-page-cafe__text-block">
-            <div class="location-page-cafe__title">ТЦ Праздничный</div>
-            <div class="location-page-cafe__meta"><ion-icon src="./static/images/location-outline.svg" class="location-page-cafe__icon"></ion-icon> Междуреченск, Проспект Шахтёров 15А</div>
-            <div class="location-page-cafe__meta"><ion-icon src="./static/images/time-outline.svg" class="location-page-cafe__icon"></ion-icon>Открыты с 9:00 до 21:00</div>
-            <a href="#" class="location-page-cafe__btn btn">НА КАРТУ &rarr;</a>
-          </figcaption>
-        </figure>
-        <div class="location-page__map"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad01c7e3b53c25409d447bb64ac7793446baac646a5c634fc9c7d2ff7780dfa21&amp;width=680&amp;height=421&amp;lang=ru_RU&amp;scroll=true"></script></div>
+{% include "header.html" %}
+<section class="location-page">
+  <h1 class="location-page__header">АДРЕСА</h1>
+  <div class="location-page__wrapper">
+    <figure class="cafe">
+      <img
+        src="./static/images/locations-small.webp"
+        alt="кофейня тц район"
+        class="cafe__img"
+      />
+      <figcaption class="cafe__text-block">
+        <div class="cafe__title">ТЦ Район</div>
+        <div class="cafe__meta">
+          <ion-icon
+            src="./static/images/location-outline.svg"
+            class="cafe__icon"
+          ></ion-icon
+          >Междуреченск, ул. Интернациональная 14
         </div>
-  </section>
+        <div class="cafe__meta">
+          <ion-icon
+            src="./static/images/time-outline.svg"
+            class="cafe__icon"
+          ></ion-icon
+          >Открыты с 9:00 до 21:00
+        </div>
+        <a
+          href="https://yandex.ru/maps/org/rayon/101449980158/?ll=88.056572%2C53.691736&z=18.9"
+          class="cafe__btn btn"
+          >НА КАРТУ &rarr;</a
+        >
+      </figcaption>
+    </figure>
+    <figure class="cafe">
+      <img
+        src="./static/images/locations-small.webp"
+        alt="кофейня тц район"
+        class="cafe__img"
+      />
+      <figcaption class="cafe__text-block">
+        <div class="cafe__title">ТРК Бель-су</div>
+        <div class="cafe__meta">
+          <ion-icon
+            src="./static/images/location-outline.svg"
+            class="cafe__icon"
+          ></ion-icon
+          >Междуреченск, Проспект Строителей 31
+        </div>
+        <div class="cafe__meta">
+          <ion-icon
+            src="./static/images/time-outline.svg"
+            class="cafe__icon"
+          ></ion-icon
+          >Открыты с 9:00 до 21:00
+        </div>
+        <a
+          href="https://yandex.ru/maps/org/torgovo_razvlekatelny_kompleks_bel_su/243911554975/?ll=88.072765%2C53.686133&z=18.9"
+          class="cafe__btn btn"
+          >НА КАРТУ &rarr;</a
+        >
+      </figcaption>
+    </figure>
+    <figure class="cafe">
+      <img
+        src="./static/images/locations-small.webp"
+        alt="кофейня тц район"
+        class="cafe__img"
+      />
+      <figcaption class="cafe__text-block">
+        <div class="cafe__title">ТЦ Праздничный</div>
+        <div class="cafe__meta">
+          <ion-icon
+            src="./static/images/location-outline.svg"
+            class="cafe__icon"
+          ></ion-icon>
+          Междуреченск, Проспект Шахтёров 15А
+        </div>
+        <div class="cafe__meta">
+          <ion-icon
+            src="./static/images/time-outline.svg"
+            class="cafe__icon"
+          ></ion-icon
+          >Открыты с 9:00 до 21:00
+        </div>
+        <a
+          href="https://yandex.ru/maps/org/prazdnichny/223791275700/?ll=88.049199%2C53.694916&z=18"
+          class="cafe__btn btn"
+          >НА КАРТУ &rarr;</a
+        >
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 {% include "footer.html" %}

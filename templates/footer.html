@@ -1,15 +1,15 @@
 <footer class="footer">
     <p>
-      <a href="#" class="footer__link">МЫ В ИНСТАГРАММЕ! <ion-icon src="./static/images/logo-instagram.svg" style="font-size: 4rem;"></ion-icon></a>
+      <a href="https://www.instagram.com/coffeecherry_siberia/" class="footer__link">МЫ В ИНСТАГРАММЕ! <ion-icon src="./static/images/logo-instagram.svg" style="font-size: 4rem;"></ion-icon></a>
     </p>
     <div class="footer__wrapper">
       <nav class="footer__nav">
-        <ul class="footer__list">
-          <a href="#" class="footer__list__link">О НАС<a>
+        <ul class="footer__list"> 
+          <a href="{{ url_for('about')}}" class="footer__list__link">О НАС<a>
           <a href="{{ url_for('locations')}}" class="footer__list__link">АДРЕСА</a>
-          <a href="#" class="footer__list__link">МЕНЮ</a>
-          <a href="#" class="footer__list__link"><ion-icon src="./static/images/logo-vk.svg"></ion-icon></a>
-          <a href="#" class="footer__list__link"><ion-icon src="./static/images/logo-instagram.svg"></ion-icon></a>
+          <a href="{{ url_for('menu') }}" class="footer__list__link">МЕНЮ</a>
+          <a href="https://vk.com/coffeecherry_siberia" class="footer__list__link"><ion-icon src="./static/images/logo-vk.svg"></ion-icon></a>
+          <a href="https://www.instagram.com/coffeecherry_siberia/" class="footer__list__link"><ion-icon src="./static/images/logo-instagram.svg"></ion-icon></a>
         </ul>
       </nav>
       <p class="copyright">

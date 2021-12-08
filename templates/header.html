@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
     <link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet" />
-    <title>Landing Page</title>
+    <title>Coffee cherry</title>
   </head>
   <body class="container">
     <header class="header">
       <nav class="nav">
-        <img
-        src="./static/images/logo-small.webp"
-        alt="coffee-cherry-logo"
-        class="nav__logo"
-      />
+        <a href="{{url_for('home')}}" class="nav__link">
+
+          <img
+          src="./static/images/logo-small.webp"
+          alt="coffee-cherry-logo"
+          class="nav__logo"
+          />
+        </a>
         <ul class="nav__list">
-          <a href="{{url_for('about')}}" class="nav__list__links">О НАС</a>
-          <a href="{{url_for('locations')}}" class="nav__list__links">КОФЕЙНИ</a>
-          <a href="#" class="nav__list__links">МЕНЮ</a>
+          <a href="{{url_for('about') }}" class="nav__list__links">О НАС</a>
+          <a href="{{url_for('locations')}}" class="nav__list__links">АДРЕСА</a>
+          <a href="{{url_for ('menu') }}" class="nav__list__links">МЕНЮ</a>
       </nav>
     </header>

@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
-
 // === MIXIN ===
 @mixin roboto {
   font-family: "Roboto", sans-serif;
@@ -38,6 +37,7 @@
 
 // === / VARIABLES ===
 $main-color: #1b545d;
+$main-color-secondary: #103036;
 $white-color: #e9ecef;
 $white-color-secondary: #adb5bd;
 $header-color: #343a40;
@@ -100,6 +100,7 @@ body {
   top: 0;
   background-color: $main-color;
   grid-column: full-start / full-end;
+  z-index: 5000;
 }
 .logo {
   height: 11rem;
@@ -112,12 +113,6 @@ body {
   &__logo {
     height: 11rem;
     width: 11rem;
-    margin-left: 3rem; 
-    grid-column: 3 / 4;
-    @include respond(tab-land) {
-      grid-column: 1 / 2;
-      margin-left: 0.5rem;
-    }
   }
   &__list {
     grid-column: 6 / 10;
@@ -141,6 +136,15 @@ body {
     &__links:hover {
       color: $white-color-secondary;
       transform: translateY(-0.5rem);
+    }
+  }
+  &__link:link,
+  &__link:visited {
+    margin-left: 3rem;
+    grid-column: 3 / 4;
+    @include respond(tab-land) {
+      grid-column: 1 / 2;
+      margin-left: 0.5rem;
     }
   }
 }
@@ -290,7 +294,7 @@ body {
   display: grid;
   grid-template-columns: 35% 50%;
   gap: 10rem;
-  margin-bottom: 20rem;
+  margin-bottom: 25rem;
   @include respond(tab-port) {
     gap: 5rem;
     grid-template-columns: 50% 50%;
@@ -354,6 +358,7 @@ body {
 // === footer ===
 .footer {
   grid-column: full-start / full-end;
+  z-index: 5000;
   &__link:link,
   &__link:visited {
     text-decoration: none;
@@ -371,7 +376,7 @@ body {
     transform: translateY(-0.5rem);
   }
   &__insta {
-    font-size: 7rem; 
+    font-size: 7rem;
   }
   &__wrapper {
     background-color: $main-color;
@@ -412,16 +417,14 @@ body {
 // === ABOUT-HERO ===
 .about-hero {
   grid-column: full-start / full-end;
-  grid-row: 2 / 3;
   background-image: url("../images/about-header.webp");
-  height: 50vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   &__header {
     font-size: 9rem;
     text-align: center;
@@ -430,27 +433,64 @@ body {
   }
 }
 .begin {
-  margin-top: 60rem;
+  margin: 30rem 0;
   grid-column: center-start / center-end;
-  grid-row: 2 / 4;
   display: grid;
   grid-template-columns: 35% 50%;
   gap: 10rem;
+  @include respond(tab-land) {
+    margin: 20rem 0;
+    gap: 7rem;
+  }
+  @include respond(tab-port) {
+    grid-template-columns: 50% 50%;
+    gap: 5rem;
+  }
+  @include respond(phone) {
+    grid-template-columns: minmax(min-content, 1fr);
+    gap: 2rem;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include respond(tab-port) {
+      justify-content: flex-start;
+    }
+    @include respond(phone) {
+      grid-row: 2 / 3;
+    }
+  }
   &__header {
     margin-bottom: 1rem;
     font-size: 7.2rem;
     color: $header-color;
     font-weight: 700;
     text-transform: uppercase;
+    @include respond(tab-land) {
+      font-size: 6.5rem;
+    }
+    @include respond(tab-port) {
+      font-size: 6rem;
+    }
   }
   &__text {
     font-size: 2.4rem;
     line-height: 3rem;
     text-align: left;
+    @include respond(tab-land) {
+      font-size: 2rem;
+    }
+    @include respond(tab-port) {
+      font-size: 1.7rem;
+    }
+    @include respond(phone) {
+      margin-bottom: 3rem;
+    }
   }
   &__img {
-    width: 80%;
-    height: 80%;
+    max-width: 100%;
+    height: auto;
     border-radius: 3rem;
   }
 }
@@ -458,26 +498,63 @@ body {
 // === OBJECT ===
 .object {
   grid-column: center-start / center-end;
-  grid-row: 4 / 5;
   display: grid;
   grid-template-columns: 50% 35%;
   gap: 10rem;
+  margin-bottom: 20rem;
+  @include respond(tab-land) {
+    margin-bottom: 10rem;
+    gap: 7rem;
+  }
+  @include respond(tab-port) {
+    grid-template-columns: 50% 50%;
+    gap: 5rem;
+  }
+  @include respond(phone) {
+    grid-template-columns: minmax(min-content, 1fr);
+    gap: 2rem;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include respond(tab-port) {
+      justify-content: flex-start;
+    }
+    @include respond(phone) {
+      grid-row: 2 / 3;
+    }
+  }
   &__header {
     margin-bottom: 1rem;
     font-size: 7.2rem;
     color: $header-color;
-    font-weight: 700; 
+    font-weight: 700;
     text-transform: uppercase;
+    @include respond(tab-land) {
+      font-size: 6.5rem;
+    }
+    @include respond(tab-port) {
+      font-size: 6rem;
+    }
   }
   &__text {
     font-size: 2.4rem;
     line-height: 3rem;
     text-align: left;
-   
+    @include respond(tab-land) {
+      font-size: 2rem;
+    }
+    @include respond(tab-port) {
+      font-size: 1.7rem;
+    }
+    @include respond(phone) {
+      margin-bottom: 3rem;
+    }
   }
   &__img {
-    width: 80%;
-    height: 80%;
+    max-width: 100%;
+    height: auto;
     border-radius: 3rem;
   }
 }
@@ -554,3 +631,203 @@ p {
   margin-bottom: 0;
 }
 // === ABOUT US SECTION === //
+// === LOCATIONS PAGE === //
+.location-page {
+  align-self: center;
+  justify-self: center;
+  grid-column: center-start / center-end;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9rem;
+    color: $header-color;
+    @include respond(tab-port) {
+      font-size: 7rem;
+    }
+    @include respond(phone) {
+      font-size: 5rem;
+    }
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+    grid-template-rows: repeat(2, min-content);
+    gap: 1rem;
+  }
+}
+.cafe {
+  border: solid 0.2rem #1b545d;
+  display: flex;
+  flex-direction: row;
+  border-radius: 3rem;
+  &__img {
+    align-self: center;
+    padding: 1rem;
+    border-radius: 3rem;
+    max-width: 20rem;
+    height: 20rem;
+    @include respond(phone) {
+      height: 12rem;
+      max-width: 12rem;
+    }
+  }
+  &__text-block {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    @include respond(phone) {
+      line-height: 3rem;
+    }
+  }
+  &__title {
+    font-size: 2.5rem;
+    color: #343a40;
+    @include respond(tab-port) {
+      font-size: 2rem;
+    }
+  }
+  &__meta {
+    margin-bottom: 0;
+    color: #495057;
+    font-size: 1.7rem;
+    text-align: left;
+  }
+  &__icon {
+    font-size: 2rem;
+    @include respond(phone) {
+      font-size: 1.5rem;
+    }
+  }
+  &__btn {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    align-self: center;
+    @include respond(tab-port) {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+    }
+  }
+}
+// === / LOCATIONS PAGE === //
+// === MENU PAGE === ///
+.menu {
+  background-image: url("../images/menu-hero.webp");
+  max-width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: full-start / full-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__nav {
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9rem;
+      color: $white-color;
+      @include respond(tab-port) {
+        font-size: 7rem;
+      }
+      @include respond(phone) {
+        font-size: 5rem;
+      }
+    }
+    &-list {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      width: 100rem;
+      justify-content: space-between;
+      @include respond(tab-port) {
+        flex-direction: column;
+        height: 30rem;
+        align-items: center;
+        justify-content: space-between;
+      }
+      @include respond(phone) {
+        width: 100%;
+      }
+    }
+    &-link:link,
+    &-link:visited {
+      text-decoration: none;
+      font-size: 5rem;
+      color: $white-color-secondary;
+      @include respond(tab-port) {
+        font-size: 4.5rem;
+      }
+      @include respond(phone) {
+        font-size: 3.8rem;
+      }
+    }
+  }
+}
+.all-menu {
+  grid-column: center-start / center-end;
+  margin: 10rem 0;
+  &__header {
+    font-size: 9rem;
+    color: $header-color;
+    @include respond(tab-port) {
+      font-size: 7rem;
+    }
+    @include respond(phone) {
+      font-size: 5rem;
+    }
+  }
+  &__list {
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 2rem;
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: solid 0.2rem #1b545d;
+      border-radius: 1rem;
+    }
+    &__img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1rem;
+    }
+    &__text {
+      margin-top: 2.5rem;
+      font-size: 4rem;
+      color: $main-color-secondary;
+      @include respond(tab-port) {
+        font-size: 3rem;
+      }
+      @include respond(phone) {
+        font-size: 2rem;
+      }
+    }
+    &__text-block {
+      margin: 2.5rem 0;
+      font-size: 2.5rem;
+      color: $main-color-secondary;
+      width: 40rem;
+      display: flex;
+      justify-content: space-evenly;
+      @include respond(tab-port) {
+        font-size: 2rem;
+      }
+      @include respond(phone) {
+        font-size: 1.8rem;
+      }
+      &__size {
+      }
+      &__price {
+      }
+    }
+  }
+}
+
+// === / MENU PAGE === ///
