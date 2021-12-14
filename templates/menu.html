@@ -12,54 +12,36 @@
 <section class="all-menu">
   <h1 class="all-menu__header" id="coffee">КОФЕ</h1>
   <ul class="all-menu__list">
+    {% for coffee in menu %} {% if coffee.type == "кофе" %}
+
     <figure class="all-menu__list__item">
-      <img
-        src="./static/images/latte.webp  "
-        alt="latte"
-        class="all-menu__list__img"
-      />
-      <figcaption class="all-menu__list__text">Латте</figcaption>
+        <img
+          src="./static/images/latte.webp  "
+          alt="latte"
+          class="all-menu__list__img"
+        />
+      </a>
+      <figcaption class="all-menu__list__text">{{coffee.name}}</figcaption>
       <div class="all-menu__list__text-block">
-        <span class="all-menu__list__text-block__size">290мл</span>
-        <span class="all-menu__list__text-block__price">200руб</span>
+        {% if coffee.size_big is not none %}
+        <span class="all-menu__list__text-block__size"
+          >{{coffee.size_big}} мл.</span
+        >
+        <span class="all-menu__list__text-block__price"
+          >{{coffee.price_big}} руб.</span
+        >
+        {% else %}
+        <span class="all-menu__list__text-block__size"
+          >{{coffee.size_small}} мл.</span
+        >
+        <span class="all-menu__list__text-block__price"
+          >{{coffee.price_small}} руб.</span
+        >
+        {% endif %}
       </div>
     </figure>
-    <figure class="all-menu__list__item">
-      <img
-        src="./static/images/latte.webp  "
-        alt="latte"
-        class="all-menu__list__img"
-      />
-      <figcaption class="all-menu__list__text">Латте</figcaption>
-      <div class="all-menu__list__text-block">
-        <span class="all-menu__list__text-block__size">290мл</span>
-        <span class="all-menu__list__text-block__price">200руб</span>
-      </div>
-    </figure>
-    <figure class="all-menu__list__item">
-      <img
-        src="./static/images/latte.webp  "
-        alt="latte"
-        class="all-menu__list__img"
-      />
-      <figcaption class="all-menu__list__text">Латте</figcaption>
-      <div class="all-menu__list__text-block">
-        <span class="all-menu__list__text-block__size">290мл</span>
-        <span class="all-menu__list__text-block__price">200руб</span>
-      </div>
-    </figure>
-    <figure class="all-menu__list__item">
-      <img
-        src="./static/images/latte.webp  "
-        alt="latte"
-        class="all-menu__list__img"
-      />
-      <figcaption class="all-menu__list__text">Латте</figcaption>
-      <div class="all-menu__list__text-block">
-        <span class="all-menu__list__text-block__size">290мл</span>
-        <span class="all-menu__list__text-block__price">200руб</span>
-      </div>
-    </figure>
+
+    {% endif %} {% endfor %}
   </ul>
 </section>
 
@@ -68,54 +50,34 @@
 <section class="all-menu">
   <h1 class="all-menu__header" id="tea">ЧАЙ</h1>
   <ul class="all-menu__list">
+    {% for tea in menu %} {% if tea.type == "чай" %}
     <figure class="all-menu__list__item">
-      <img
-        src="./static/images/latte.webp  "
-        alt="latte"
-        class="all-menu__list__img"
-      />
-      <figcaption class="all-menu__list__text">МАТЧА</figcaption>
+        <img
+          src="./static/images/latte.webp  "
+          alt="latte"
+          class="all-menu__list__img"
+        />
+      </a>
+      <figcaption class="all-menu__list__text">{{tea.name}}</figcaption>
       <div class="all-menu__list__text-block">
-        <span class="all-menu__list__text-block__size">290мл</span>
-        <span class="all-menu__list__text-block__price">200руб</span>
+        {% if tea.size_big is not none %}
+        <span class="all-menu__list__text-block__size"
+          >{{tea.size_big}} мл.</span
+        >
+        <span class="all-menu__list__text-block__price"
+          >{{tea.price_big}} руб.</span
+        >
+        {% else %}
+        <span class="all-menu__list__text-block__size"
+          >{{tea.size_small}} мл.</span
+        >
+        <span class="all-menu__list__text-block__price"
+          >{{tea.price_small}} руб.</span
+        >
+        {% endif %}
       </div>
     </figure>
-    <figure class="all-menu__list__item">
-      <img
-        src="./static/images/latte.webp  "
-        alt="latte"
-        class="all-menu__list__img"
-      />
-      <figcaption class="all-menu__list__text">МАТЧА</figcaption>
-      <div class="all-menu__list__text-block">
-        <span class="all-menu__list__text-block__size">290мл</span>
-        <span class="all-menu__list__text-block__price">200руб</span>
-      </div>
-    </figure>
-    <figure class="all-menu__list__item">
-      <img
-        src="./static/images/latte.webp  "
-        alt="latte"
-        class="all-menu__list__img"
-      />
-      <figcaption class="all-menu__list__text">МАТЧА</figcaption>
-      <div class="all-menu__list__text-block">
-        <span class="all-menu__list__text-block__size">290мл</span>
-        <span class="all-menu__list__text-block__price">200руб</span>
-      </div>
-    </figure>
-    <figure class="all-menu__list__item">
-      <img
-        src="./static/images/latte.webp  "
-        alt="latte"
-        class="all-menu__list__img"
-      />
-      <figcaption class="all-menu__list__text">МАТЧА</figcaption>
-      <div class="all-menu__list__text-block">
-        <span class="all-menu__list__text-block__size">290мл</span>
-        <span class="all-menu__list__text-block__price">200руб</span>
-      </div>
-    </figure>
+    {% endif %} {% endfor %}
   </ul>
 </section>
 
@@ -124,54 +86,34 @@
 <section class="all-menu">
   <h1 class="all-menu__header" id="milk">МОЛОЧНЫЕ КОКТЕЙЛИ</h1>
   <ul class="all-menu__list">
+    {% for milk in menu %} {% if milk.type == "молочный" %}
     <figure class="all-menu__list__item">
-      <img
-        src="./static/images/latte.webp  "
-        alt="latte"
-        class="all-menu__list__img"
-      />
-      <figcaption class="all-menu__list__text">СНИКЕРС</figcaption>
+        <img
+          src="./static/images/latte.webp  "
+          alt="latte"
+          class="all-menu__list__img"
+        />
+      </a>
+      <figcaption class="all-menu__list__text">{{milk.name}}</figcaption>
       <div class="all-menu__list__text-block">
-        <span class="all-menu__list__text-block__size">290мл</span>
-        <span class="all-menu__list__text-block__price">200руб</span>
+        {% if milk.size_big is not none %}
+        <span class="all-menu__list__text-block__size"
+          >{{milk.size_big}} мл.</span
+        >
+        <span class="all-menu__list__text-block__price"
+          >{{milk.price_big}} руб.</span
+        >
+        {% else %}
+        <span class="all-menu__list__text-block__size"
+          >{{milk.size_small}} мл.</span
+        >
+        <span class="all-menu__list__text-block__price"
+          >{{milk.price_small}} руб.</span
+        >
+        {% endif %}
       </div>
     </figure>
-    <figure class="all-menu__list__item">
-      <img
-        src="./static/images/latte.webp  "
-        alt="latte"
-        class="all-menu__list__img"
-      />
-      <figcaption class="all-menu__list__text">СНИКЕРС</figcaption>
-      <div class="all-menu__list__text-block">
-        <span class="all-menu__list__text-block__size">290мл</span>
-        <span class="all-menu__list__text-block__price">200руб</span>
-      </div>
-    </figure>
-    <figure class="all-menu__list__item">
-      <img
-        src="./static/images/latte.webp  "
-        alt="latte"
-        class="all-menu__list__img"
-      />
-      <figcaption class="all-menu__list__text">СНИКЕРС</figcaption>
-      <div class="all-menu__list__text-block">
-        <span class="all-menu__list__text-block__size">290мл</span>
-        <span class="all-menu__list__text-block__price">200руб</span>
-      </div>
-    </figure>
-    <figure class="all-menu__list__item">
-      <img
-        src="./static/images/latte.webp  "
-        alt="latte"
-        class="all-menu__list__img"
-      />
-      <figcaption class="all-menu__list__text">СНИКЕРС</figcaption>
-      <div class="all-menu__list__text-block">
-        <span class="all-menu__list__text-block__size">290мл</span>
-        <span class="all-menu__list__text-block__price">200руб</span>
-      </div>
-    </figure>
+    {% endif %} {% endfor %}
   </ul>
 </section>
 {% include 'footer.html' %}

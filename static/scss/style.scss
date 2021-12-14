@@ -802,7 +802,7 @@ p {
       margin-top: 2.5rem;
       font-size: 4rem;
       color: $main-color-secondary;
-      @include respond(tab-port) {
+      @include respond(tab-land) {
         font-size: 3rem;
       }
       @include respond(phone) {
@@ -831,3 +831,47 @@ p {
 }
 
 // === / MENU PAGE === ///
+// === CARD PAGE === ///
+.card {
+  grid-column: center-start / center-end;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  &__img {
+    border-radius: 1rem;
+    width: 40rem;
+    height: 40rem;
+  }
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    height: 40rem;
+    justify-content: space-evenly;
+    &__type {
+      font-size: 2rem;
+      color: $main-color;
+    }
+    &__name {
+      font-size: 8rem;
+      color: $main-color-secondary;
+    }
+    &__desc {
+      font-size: 1.6rem;
+      color: $main-color;
+    }
+    &__size {
+      font-size: 2rem;
+      color: $main-color;
+    }
+    &__price {
+      font-size: 2rem;
+      color: $main-color;
+    }
+    &__price-block {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+// === / CARD PAGE === ///

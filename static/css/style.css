@@ -875,7 +875,7 @@ p {
   font-size: 4rem;
   color: #103036;
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 88em) {
   .all-menu__list__text {
     font-size: 3rem;
   }
@@ -902,4 +902,52 @@ p {
   .all-menu__list__text-block {
     font-size: 1.8rem;
   }
+}
+.all-menu__list__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card {
+  grid-column: center-start/center-end;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.card__img {
+  border-radius: 1rem;
+  width: 40rem;
+  height: 40rem;
+}
+.card__text-block {
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  height: 40rem;
+  justify-content: space-evenly;
+}
+.card__text-block__type {
+  font-size: 2rem;
+  color: #1b545d;
+}
+.card__text-block__name {
+  font-size: 8rem;
+  color: #103036;
+}
+.card__text-block__desc {
+  font-size: 1.6rem;
+  color: #1b545d;
+}
+.card__text-block__size {
+  font-size: 2rem;
+  color: #1b545d;
+}
+.card__text-block__price {
+  font-size: 2rem;
+  color: #1b545d;
+}
+.card__text-block__price-block {
+  display: flex;
+  justify-content: space-around;
 }
